@@ -23,6 +23,6 @@ public class UndertowHandlerExtension implements ServletExtension {
 	@Override
 	public void handleDeployment(final DeploymentInfo deploymentInfo, final ServletContext servletContext) {
 		deploymentInfo
-			.addInnerHandlerChainWrapper(  handler -> new AuthEventHandler(handler));
+			.addSecurityWrapper(handler -> new AuthEventHandler(handler));
 	}
 }
