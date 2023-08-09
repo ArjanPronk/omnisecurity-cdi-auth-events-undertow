@@ -9,7 +9,7 @@
 
 	<groupId>org.omnifaces</groupId>
 	<artifactId>omnisecurity-cdi-auth-events-undertow</artifactId>
-	<version>10.0.0.Final-u1</version>
+	<version>10.0.0.Final-u1-jakarta</version>
 	<packaging>jar</packaging>
 	
 	<name>omnisecurity CDI auth events undertow</name>
