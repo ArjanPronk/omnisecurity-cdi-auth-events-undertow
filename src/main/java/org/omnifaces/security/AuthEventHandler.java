@@ -12,7 +12,7 @@
  */
 package org.omnifaces.security;
 
-import javax.enterprise.inject.spi.CDI;
+import jakarta.enterprise.inject.spi.CDI;
 
 import io.undertow.security.api.NotificationReceiver;
 import io.undertow.security.api.SecurityNotification;
@@ -41,10 +41,10 @@ public final class AuthEventHandler implements HttpHandler {
 
             switch (notification.getEventType()) {
                 case AUTHENTICATED:
-                	CDI.current().getBeanManager().fireEvent(new AuthenticatedEvent(notification, notification.getAccount().getPrincipal()));
+					CDI.current().getBeanManager().getEvent().fire(new AuthenticatedEvent(notification, notification.getAccount().getPrincipal()));
                 	break;
                 case LOGGED_OUT:
-                	CDI.current().getBeanManager().fireEvent(new LoggedOutEvent(notification, notification.getAccount().getPrincipal()));
+					CDI.current().getBeanManager().getEvent().fire(new LoggedOutEvent(notification, notification.getAccount().getPrincipal()));
                 	break;
                 default:
                 	break;
